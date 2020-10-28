@@ -33,3 +33,6 @@ spec:
     app: WebApiDockerProject
 
 - task: PublishBuildArtifacts@1
+  inputs: 
+    pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
+    ArtifactName: 'www'
