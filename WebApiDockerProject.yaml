@@ -14,7 +14,11 @@ spec:
     spec:
       containers:
       - name: webapidockerprojectrepos
+<<<<<<< HEAD
         image: samplecr4.azurecr.io/practicecheckrepos:latest
+=======
+        image: samplecr1.azurecr.io/webapidockerprojectrepos:latest
+>>>>>>> 443c446ec9a5f14d17ecc2548489146427b0867a
         ports:
         - containerPort: 8080
       imagePullSecrets:
