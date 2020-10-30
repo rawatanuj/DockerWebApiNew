@@ -1,37 +1,33 @@
-﻿apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapidockerproject-deployment
+  name: dockersampleconfig-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: WebApiDockerProject
+      app: Dockersampleconfig
   template:
     metadata:
       labels:
-        app: WebApiDockerProject
+        app: Dockersampleconfig
     spec:
       containers:
-      - name: webapidockerprojectrepos
-<<<<<<< HEAD
-        image: samplecr4.azurecr.io/practicecheckrepos:latest
-=======
-        image: samplecr1.azurecr.io/webapidockerprojectrepos:latest
->>>>>>> 443c446ec9a5f14d17ecc2548489146427b0867a
+      - name: dockersamplerepos
+        image: samplecr1.azurecr.io/dockersamplerepos:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
-      - name: dsconfigsn2
+      - name: dsconfigsn
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapidockerproject
+  name: dockersampleconfig
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: WebApiDockerProject
+    app: Dockersampleconfig
